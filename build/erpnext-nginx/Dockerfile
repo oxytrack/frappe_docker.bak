@@ -4,8 +4,8 @@ ARG IMAGE_TAG=develop
 
 FROM node:${NODE_IMAGE_TAG}
 
-ARG GIT_REPO=https://github.com/frappe/erpnext
-ARG GIT_BRANCH=develop
+ARG GIT_REPO=https://github.com/wtwong316/erpnext
+ARG GIT_BRANCH=version-13
 ARG FRAPPE_BRANCH=${GIT_BRANCH}
 
 COPY build/erpnext-nginx/install_app.sh /install_app

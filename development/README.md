@@ -18,7 +18,7 @@ It is recommended you allocate at least 4GB of RAM to docker:
 Clone and change directory to frappe_docker directory
 
 ```shell
-git clone https://github.com/frappe/frappe_docker.git
+git clone https://github.com/wtwong316/frappe_docker.git
 cd frappe_docker
 ```
 
@@ -156,14 +156,14 @@ bench get-app --branch version-12 myapp https://github.com/myusername/myapp.git
 bench --site mysite.localhost install-app myapp
 ```
 
-To install ERPNext (from the version-12 branch):
+To install ERPNext (from the version-13 branch):
 
 ```shell
-bench get-app --branch version-12 erpnext https://github.com/frappe/erpnext.git
+bench get-app --branch version-13 erpnext https://github.com/wtwong316/erpnext.git
 bench --site mysite.localhost install-app erpnext
 ```
 
-Note: Both frappe and erpnext must be on branch with same name. e.g. version-12
+Note: Both frappe and erpnext must be on branch with same name. e.g. version-13
 
 ### Start Frappe without debugging
 

@@ -4,8 +4,8 @@
 # by Website Manager role in Frappe Framework
 FROM python:3.7-slim-buster
 
-ARG GIT_REPO=https://github.com/frappe/frappe
-ARG GIT_BRANCH=develop
+ARG GIT_REPO=https://github.com/wtwong316/frappe
+ARG GIT_BRANCH=version-13
 
 ENV NVM_DIR=/root/.nvm
 ENV NODE_VERSION=14.17.0
@@ -37,7 +37,7 @@ RUN node --version \
     && npm --version \
     && yarn --version
 
-RUN git clone --depth 1 https://github.com/frappe/bench /tmp/bench \
+RUN git clone --depth 1 https://github.com/wtwong316/bench /tmp/bench \
     && mkdir -p /var/www/error_pages \
     && cp -r /tmp/bench/bench/config/templates /var/www/error_pages
 
