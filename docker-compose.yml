@@ -31,7 +31,8 @@ services:
     userns_mode: "host"
 
   erpnext-nginx:
-    image: localhost:5000/erpnext-nginx:${ERPNEXT_VERSION}
+    #image: wtwong316/oxytrack/erpnext-nginx:${ERPNEXT_VERSION}
+    image: wtwong316/oxytrack:erpnext-nginx
     restart: on-failure
     environment:
       - FRAPPE_PY=erpnext-python
@@ -50,7 +51,8 @@ services:
       - assets-vol:/assets:rw
 
   erpnext-python:
-    image: localhost:5000/erpnext-worker:${ERPNEXT_VERSION}
+    #image: wtwong316/oxytrack/erpnext-worker:${ERPNEXT_VERSION}
+    image: wtwong316/oxytrack:erpnext-worker
     restart: on-failure
     environment:
       - MARIADB_HOST=${MARIADB_HOST}
@@ -65,7 +67,8 @@ services:
       - assets-vol:/home/frappe/frappe-bench/sites/assets:rw
 
   frappe-socketio:
-    image: localhost:5000/frappe-socketio:${FRAPPE_VERSION}
+    #image: wtwong316/oxytrack/frappe-socketio:${FRAPPE_VERSION}
+    image: wtwong316/oxytrack:frappe-socketio
     restart: on-failure
     depends_on:
       - redis-socketio
@@ -74,7 +77,8 @@ services:
       - logs-vol:/home/frappe/frappe-bench/logs:rw
 
   erpnext-worker-default:
-    image: localhost:5000/erpnext-worker:${ERPNEXT_VERSION}
+    #image: wtwong316/oxytrack/erpnext-worker:${ERPNEXT_VERSION}
+    image: wtwong316/oxytrack:erpnext-worker
     restart: on-failure
     command: worker
     depends_on:
@@ -85,7 +89,8 @@ services:
       - logs-vol:/home/frappe/frappe-bench/logs:rw
 
   erpnext-worker-short:
-    image: localhost:5000/erpnext-worker:${ERPNEXT_VERSION}
+    #image: wtwong316/oxytrack/erpnext-worker:${ERPNEXT_VERSION}
+    image: wtwong316/oxytrack:erpnext-worker
     restart: on-failure
     command: worker
     environment:
@@ -98,7 +103,8 @@ services:
       - logs-vol:/home/frappe/frappe-bench/logs:rw
 
   erpnext-worker-long:
-    image: localhost:5000/erpnext-worker:${ERPNEXT_VERSION}
+    #image: wtwong316/oxytrack/erpnext-worker:${ERPNEXT_VERSION}
+    image: wtwong316/oxytrack:erpnext-worker
     restart: on-failure
     command: worker
     environment:
@@ -110,7 +116,8 @@ services:
       - sites-vol:/home/frappe/frappe-bench/sites:rw
 
   erpnext-schedule:
-    image: localhost:5000/erpnext-worker:${ERPNEXT_VERSION}
+    #image: wtwong316/oxytrack/erpnext-worker:${ERPNEXT_VERSION}
+    image: wtwong316/oxytrack:erpnext-worker
     restart: on-failure
     command: schedule
     depends_on:
@@ -148,7 +155,8 @@ services:
       - mariadb-vol:/var/lib/mysql
 
   site-creator:
-    image: localhost:5000/erpnext-worker:${ERPNEXT_VERSION}
+    #image: wtwong316/oxytrack/erpnext-worker:${ERPNEXT_VERSION}
+    image: wtwong316/oxytrack:erpnext-worker
     restart: "no"
     command: new
     depends_on:
