@@ -85,7 +85,7 @@ def parse_args():
 def git_version(service, version, branch, is_beta=False):
     print(f"Pulling {service} v{version}")
     subprocess.run(
-        f"git clone https://github.com/wtwong316/frappe/{service} --branch {branch}", shell=True
+        f"git clone https://github.com/oxytrack/frappe/{service} --branch {branch}", shell=True
     )
     cd = os.getcwd()
     os.chdir(os.getcwd() + f"/{service}")

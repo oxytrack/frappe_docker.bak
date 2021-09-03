@@ -18,7 +18,7 @@ It is recommended you allocate at least 4GB of RAM to docker:
 Clone and change directory to frappe_docker directory
 
 ```shell
-git clone https://github.com/wtwong316/frappe_docker.git
+git clone https://github.com/oxytrack/frappe_docker.git
 cd frappe_docker
 ```
 
@@ -58,7 +58,7 @@ Notes:
 Run the following commands in the terminal inside the container. You might need to create a new terminal in VSCode.
 
 ```shell
-bench init --skip-redis-config-generation --frappe-branch version-12 frappe-bench
+bench init --skip-redis-config-generation --frappe-branch version-13 frappe-bench
 cd frappe-bench
 ```
 
@@ -152,14 +152,14 @@ To install custom app
 
 ```shell
 # --branch is optional, use it to point to branch on custom app repository
-bench get-app --branch version-12 myapp https://github.com/myusername/myapp.git
+bench get-app --branch version-13 myapp https://github.com/myusername/myapp.git
 bench --site mysite.localhost install-app myapp
 ```
 
 To install ERPNext (from the version-13 branch):
 
 ```shell
-bench get-app --branch version-13 erpnext https://github.com/wtwong316/erpnext.git
+bench get-app --branch version-13 erpnext https://github.com/oxytrack/erpnext.git
 bench --site mysite.localhost install-app erpnext
 ```
 

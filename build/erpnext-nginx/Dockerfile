@@ -1,10 +1,10 @@
 ARG NODE_IMAGE_TAG=14-buster-slim
-ARG DOCKER_REGISTRY_PREFIX=localhost:5000
-ARG IMAGE_TAG=v0.0.1
+ARG DOCKER_REGISTRY_PREFIX=valuefabric/oxytrack
+ARG IMAGE_TAG=erpnext-nginx
 
 FROM node:${NODE_IMAGE_TAG}
 
-ARG GIT_REPO=https://github.com/wtwong316/erpnext
+ARG GIT_REPO=https://github.com/oxytrack/erpnext
 ARG GIT_BRANCH=version-13
 ARG FRAPPE_BRANCH=${GIT_BRANCH}
 
@@ -17,7 +17,7 @@ RUN chmod +x /install_app && \
 
 RUN /install_app erpnext ${GIT_REPO} ${GIT_BRANCH} ${FRAPPE_BRANCH}
 
-FROM ${DOCKER_REGISTRY_PREFIX}/frappe-nginx:${IMAGE_TAG}
+FROM ${DOCKER_REGISTRY_PREFIX}:${IMAGE_TAG}
 
 COPY --from=0 /home/frappe/frappe-bench/sites/ /var/www/html/
 COPY --from=0 /rsync /rsync

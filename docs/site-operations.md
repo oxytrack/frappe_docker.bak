@@ -177,7 +177,7 @@ Note:
 
 Editing config manually might be required in some cases,
 one such case is to use Amazon RDS (or any other DBaaS).
-For full instructions, refer to the [wiki](https://github.com/wtwong316/frappe/wiki/Using-Frappe-with-Amazon-RDS-(or-any-other-DBaaS)). Common question can be found in Issues and on forum.
+For full instructions, refer to the [wiki](https://github.com/oxytrack/frappe/wiki/Using-Frappe-with-Amazon-RDS-(or-any-other-DBaaS)). Common question can be found in Issues and on forum.
 
 `common_site_config.json` or `site_config.json` from `sites-vol` volume has to be edited using following command:
 

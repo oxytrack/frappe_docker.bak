@@ -1,6 +1,6 @@
 FROM alpine/git
 
-ARG GIT_REPO=https://github.com/wtwong316/frappe.git
+ARG GIT_REPO=https://github.com/oxytrack/frappe.git
 ARG GIT_BRANCH=version-13
 
 RUN git clone ${GIT_REPO} /opt/frappe -b ${GIT_BRANCH} --depth 1
