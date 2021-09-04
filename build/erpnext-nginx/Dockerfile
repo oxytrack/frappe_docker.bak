@@ -1,6 +1,6 @@
 ARG NODE_IMAGE_TAG=14-buster-slim
 ARG DOCKER_REGISTRY_PREFIX=valuefabric/oxytrack
-ARG IMAGE_TAG=erpnext-nginx
+ARG IMAGE_TAG=frappe-nginx
 
 FROM node:${NODE_IMAGE_TAG}
 

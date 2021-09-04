@@ -1,7 +1,7 @@
 # Frappe Bench Dockerfile
 FROM debian:buster-slim
 
-ARG GIT_REPO=https://github.com/oxytrack/bench.git
+ARG GIT_REPO=https://github.com/oxytrack/bench
 ARG GIT_BRANCH=develop
 
 LABEL author=frappé
