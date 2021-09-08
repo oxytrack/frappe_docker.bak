@@ -65,7 +65,7 @@ services:
       - assets-vol:/home/frappe/frappe-bench/sites/assets:rw
 
   frappe-socketio:
-    image: europe-west6-docker.pkg.dev/oxytrack-322814/oxytrack-docker-repo/frappe-worker:v0.0.1
+    image: europe-west6-docker.pkg.dev/oxytrack-322814/oxytrack-docker-repo/frappe-socketio:v0.0.1
     restart: on-failure
     depends_on:
       - redis-socketio
